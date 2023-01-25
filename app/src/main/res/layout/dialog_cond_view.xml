@@ -1,0 +1,335 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#263643">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="696dp"
+       android:layout_height="456dp"
+       app:layout_constraintStart_toStartOf="parent"
+       app:layout_constraintEnd_toEndOf="parent"
+       app:layout_constraintTop_toTopOf="parent"
+       app:layout_constraintBottom_toBottomOf="parent">
+
+       <View
+           android:layout_width="696dp"
+           android:layout_height="456dp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"/>
+
+       <ImageView
+           android:id="@+id/ivBack"
+           android:layout_width="38dp"
+           android:layout_height="32dp"
+           android:src="@drawable/ic_closebtn"
+           android:layout_marginTop="20dp"
+           android:layout_marginEnd="20dp"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintTop_toTopOf="parent"/>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/clModeColling"
+           android:layout_width="110dp"
+           android:layout_height="80dp"
+           android:layout_marginEnd="20dp"
+           android:layout_marginTop="35dp"
+           android:background="@drawable/view_mode_on"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintEnd_toStartOf="@id/clModeHeating"
+           app:layout_constraintStart_toStartOf="@id/btnCondMode"
+           app:layout_constraintBottom_toTopOf="@id/btnCondMode">
+
+           <ImageView
+               android:id="@+id/ivModeColling"
+               android:layout_width="35dp"
+               android:layout_height="35dp"
+               android:src="@drawable/ic_cooling_on"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toTopOf="@id/tvModeColling"/>
+
+           <TextView
+               android:id="@+id/tvModeColling"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Охлаждение"
+               android:textSize="15sp"
+               android:textColor="#f1f1f1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivModeColling"
+               />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/clModeHeating"
+           android:layout_width="110dp"
+           android:layout_height="80dp"
+           android:layout_marginStart="20dp"
+           android:layout_marginTop="35dp"
+           android:background="@drawable/view_mode_off"
+           app:layout_constraintStart_toEndOf="@id/clModeColling"
+           app:layout_constraintEnd_toEndOf="@id/btnCondMode"
+           app:layout_constraintTop_toTopOf="parent"
+           app:layout_constraintBottom_toTopOf="@id/btnCondMode">
+
+           <ImageView
+               android:id="@+id/ivModeHeating"
+               android:layout_width="35dp"
+               android:layout_height="35dp"
+               android:src="@drawable/ic_heating_off"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toTopOf="@id/tvModeHeating"/>
+
+           <TextView
+               android:id="@+id/tvModeHeating"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Обогрев"
+               android:textSize="15sp"
+               android:textColor="#f1f1f1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivModeHeating"
+               />
+
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <com.google.android.material.button.MaterialButton
+           android:id="@+id/btnCondMode"
+           android:layout_width="150dp"
+           android:layout_height="40dp"
+           android:background="@drawable/btn_background"
+           app:backgroundTint="@null"
+           android:text="Режим"
+           android:textAllCaps="false"
+           android:textSize="16sp"
+           android:textColor="#172634"
+           app:layout_constraintTop_toBottomOf="@id/clModeHeating"
+           app:layout_constraintStart_toStartOf="@id/tvTempNum"
+           app:layout_constraintEnd_toEndOf="@id/tvTempNum"
+           app:layout_constraintBottom_toTopOf="@id/tvTempNum"
+           />
+
+
+       <ImageView
+           android:id="@+id/ivTempMinus"
+           android:layout_width="56dp"
+           android:layout_height="56dp"
+           android:scaleType="centerCrop"
+           android:layout_marginEnd="20dp"
+           android:src="@drawable/ic_temp_minus"
+           app:layout_constraintEnd_toStartOf="@id/tvTempNum"
+           app:layout_constraintTop_toTopOf="@id/tvTempNum"
+           app:layout_constraintBottom_toBottomOf="@id/tvTempNum"
+           />
+
+       <ImageView
+           android:id="@+id/ivTempPlus"
+           android:layout_width="56dp"
+           android:layout_height="56dp"
+           android:scaleType="centerCrop"
+           android:layout_marginStart="20dp"
+           android:src="@drawable/ic_temp_plus"
+           app:layout_constraintStart_toEndOf="@id/tvGradus"
+           app:layout_constraintTop_toTopOf="@id/tvTempNum"
+           app:layout_constraintBottom_toBottomOf="@id/tvTempNum"
+           />
+
+       <TextView
+           android:id="@+id/tvTempNum"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="60sp"
+           android:text="30"
+           android:textColor="#fff"
+           app:layout_constraintTop_toBottomOf="@id/btnCondMode"
+           app:layout_constraintStart_toStartOf="@id/idTemp"
+           app:layout_constraintEnd_toStartOf="@id/tvGradus"
+           app:layout_constraintBottom_toTopOf="@id/idTemp"
+           />
+
+       <TextView
+           android:id="@+id/tvGradus"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:textSize="60sp"
+           android:text=" C°"
+           android:textColor="#fff"
+           app:layout_constraintStart_toEndOf="@id/tvTempNum"
+           app:layout_constraintEnd_toStartOf="@id/ivTempPlus"
+           app:layout_constraintBottom_toTopOf="@id/idTemp"
+           app:layout_constraintTop_toBottomOf="@id/btnCondMode"/>
+
+       <TextView
+           android:id="@+id/idTemp"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:text=" Температура C°"
+           android:textColor="#fff"
+           android:textSize="19sp"
+           app:layout_constraintTop_toBottomOf="@id/tvTempNum"
+           app:layout_constraintStart_toStartOf="@id/cvCondDirection"
+           app:layout_constraintEnd_toEndOf="@id/cvCondDirection"
+           app:layout_constraintBottom_toTopOf="@id/cvCondDirection"
+           />
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/cvCondOffOn"
+           android:layout_width="wrap_content"
+           android:layout_height="110dp"
+           android:layout_marginBottom="20dp"
+           app:layout_constraintTop_toBottomOf="@id/idTemp"
+           app:layout_constraintStart_toStartOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent"
+           app:layout_constraintEnd_toStartOf="@id/cvCondDirection">
+
+           <ImageView
+               android:id="@+id/ivCondOffOn"
+               android:layout_width="76dp"
+               android:layout_height="76dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/ic_cond_off"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toTopOf="@id/tvCondOffOn"
+               />
+
+           <TextView
+               android:id="@+id/tvCondOffOn"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Вкл"
+               android:textSize="19sp"
+               android:textColor="#f1f1f1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivCondOffOn"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/cvCondDirection"
+           android:layout_width="wrap_content"
+           android:layout_height="110dp"
+           android:layout_marginBottom="20dp"
+           app:layout_constraintTop_toBottomOf="@id/idTemp"
+           app:layout_constraintStart_toEndOf="@id/cvCondOffOn"
+           app:layout_constraintEnd_toStartOf="@id/cvCondSpeed"
+           app:layout_constraintBottom_toBottomOf="parent">
+
+           <ImageView
+               android:id="@+id/ivCondDirection"
+               android:layout_width="76dp"
+               android:layout_height="76dp"
+               android:scaleType="centerCrop"
+               android:src="@drawable/ic_direction_on"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toTopOf="@id/tvCondDirection"
+               />
+
+           <TextView
+               android:id="@+id/tvCondDirection"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Направление"
+               android:textSize="19sp"
+               android:textColor="#f1f1f1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivCondDirection"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+       <androidx.constraintlayout.widget.ConstraintLayout
+           android:id="@+id/cvCondSpeed"
+           android:layout_width="wrap_content"
+           android:layout_height="110dp"
+           android:layout_marginBottom="20dp"
+           app:layout_constraintTop_toBottomOf="@id/idTemp"
+           app:layout_constraintStart_toEndOf="@id/cvCondDirection"
+           app:layout_constraintEnd_toEndOf="parent"
+           app:layout_constraintBottom_toBottomOf="parent">
+
+           <com.google.android.material.card.MaterialCardView
+               android:id="@+id/ivCondSpeed"
+               android:layout_width="70dp"
+               android:layout_height="70dp"
+               app:cardCornerRadius="35dp"
+               app:strokeWidth="3dp"
+               app:strokeColor="#4fd8e0"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toTopOf="parent"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toTopOf="@id/tvCondSpeed">
+
+               <FrameLayout
+                   android:layout_width="match_parent"
+                   android:layout_height="match_parent">
+
+                   <View
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       android:background="#263643"
+                       />
+                   <androidx.constraintlayout.widget.ConstraintLayout
+                       android:id="@+id/cl"
+                       android:layout_width="match_parent"
+                       android:layout_height="match_parent"
+                       >
+
+                       <TextView
+                           android:id="@+id/tvCondAuto"
+                           android:layout_width="wrap_content"
+                           android:layout_height="wrap_content"
+                           android:text="AUTO"
+                           android:visibility="gone"
+                           android:textColor="#4fd8e0"
+                           app:layout_constraintStart_toStartOf="parent"
+                           app:layout_constraintTop_toTopOf="parent"
+                           app:layout_constraintEnd_toEndOf="parent"
+                           app:layout_constraintBottom_toBottomOf="parent"
+                           />
+
+                       <ImageView
+                           android:id="@+id/ivSpeed"
+                           android:layout_width="match_parent"
+                           android:layout_height="match_parent"
+                           android:padding="13dp"
+                           android:src="@drawable/ic_cond_speed_1"/>
+                   </androidx.constraintlayout.widget.ConstraintLayout>
+
+               </FrameLayout>
+           </com.google.android.material.card.MaterialCardView>
+
+           <TextView
+               android:id="@+id/tvCondSpeed"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="Скорость"
+               android:textSize="19sp"
+               android:textColor="#f1f1f1"
+               app:layout_constraintStart_toStartOf="parent"
+               app:layout_constraintTop_toBottomOf="@id/ivCondSpeed"
+               app:layout_constraintEnd_toEndOf="parent"
+               app:layout_constraintBottom_toBottomOf="parent"
+               />
+       </androidx.constraintlayout.widget.ConstraintLayout>
+
+   </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.constraintlayout.widget.ConstraintLayout>

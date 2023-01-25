@@ -1,0 +1,1474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.home.HomeFragment">
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@drawable/layout_background"/>
+
+    <FrameLayout
+        android:layout_gravity="center"
+        android:layout_width="1024dp"
+        android:layout_height="600dp">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/ivOffice"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginHorizontal="55.77dp"
+                android:layout_marginVertical="145.285dp"
+                android:src="@drawable/background"
+                android:layout_gravity="center"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"/>
+
+
+            <TextView
+                android:id="@+id/tvTime"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="12:00"
+                android:textSize="64sp"
+                android:textColor="#f1f1f1"
+                app:layout_constraintBottom_toTopOf="@id/ivOffice"
+                app:layout_constraintStart_toStartOf="parent"
+                />
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:text="19/01/2023"
+                android:layout_marginEnd="20dp"
+                android:textSize="40sp"
+                android:textColor="#f1f1f1"
+                app:layout_constraintBottom_toTopOf="@id/ivOffice"
+                />
+            
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvControl1"
+                android:layout_width="244dp"
+                android:layout_height="84dp"
+                app:cardCornerRadius="16dp"
+                app:cardElevation="5dp"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@id/ivOffice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cvControl2">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#24475c">
+
+                    <TextView
+                        android:id="@+id/tvTurnAllLights"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Turn all lights"
+                        android:textSize="23sp"
+                        android:textColor="#f1f1f1"
+                        android:layout_marginStart="20dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tveOn"/>
+
+                    <TextView
+                        android:id="@+id/tveOn"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="On"
+                        android:layout_marginStart="20dp"
+                        android:textSize="20sp"
+                        android:textColor="#f1f1f1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTurnAllLights"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchCompatLight"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:track="@drawable/track"
+                        android:thumb="@drawable/thumb"
+                        android:text=""
+                        android:rotation="270"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTurnAllLights"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvControl2"
+                android:layout_width="244dp"
+                android:layout_height="84dp"
+                app:cardElevation="5dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toEndOf="@id/cvControl1"
+                app:layout_constraintTop_toBottomOf="@id/ivOffice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cvOutsideTemp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="#24475c">
+
+                    <TextView
+                        android:id="@+id/tvTurnAllAC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="16dp"
+                        android:text="Turn all A/C"
+                        android:textColor="#f1f1f1"
+                        android:textSize="23sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvOff"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvOff"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Off"
+                        android:layout_marginStart="20dp"
+                        android:textSize="20sp"
+                        android:textColor="#f1f1f1"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvTurnAllAC"/>
+
+                    <androidx.appcompat.widget.SwitchCompat
+                        android:id="@+id/switchCompatAC"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:checked="false"
+                        app:track="@drawable/track"
+                        android:thumb="@drawable/thumb"
+                        android:text=""
+                        android:rotation="270"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintStart_toEndOf="@id/tvTurnAllAC"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvOutsideTemp"
+                android:layout_width="190dp"
+                android:layout_height="84dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toEndOf="@id/cvControl2"
+                app:layout_constraintTop_toBottomOf="@id/ivOffice"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@id/cvInOfficeTemp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/back">
+
+                    <TextView
+                        android:id="@+id/tvOutsideT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Outside temperature"
+                        android:textColor="#f1f1f1"
+                        android:textSize="17sp"
+                        app:layout_constraintBottom_toTopOf="@id/tvOutsideTemp"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <TextView
+                        android:id="@+id/tvOutsideTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textColor="#f1f1f1"
+                        android:textSize="35sp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ivOutsideTewmp"
+                        app:layout_constraintTop_toBottomOf="@id/tvOutsideT" />
+
+                    <ImageView
+                        android:id="@+id/ivOutsideTewmp"
+                        android:layout_width="26dp"
+                        android:layout_height="42dp"
+                        android:layout_marginEnd="15dp"
+                        android:src="@drawable/ic_cold_temp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintTop_toBottomOf="@id/tvOutsideT" />
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </com.google.android.material.card.MaterialCardView>
+
+            <com.google.android.material.card.MaterialCardView
+                android:id="@+id/cvInOfficeTemp"
+                android:layout_width="190dp"
+                android:layout_height="84dp"
+                app:cardCornerRadius="16dp"
+                app:layout_constraintStart_toEndOf="@id/cvOutsideTemp"
+                app:layout_constraintTop_toBottomOf="@id/ivOffice"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/back">
+
+                    <TextView
+                        android:id="@+id/tvOfficeT"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="In office temperature"
+                        android:textColor="#f1f1f1"
+                        android:textSize="17sp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toTopOf="@id/tvOfficeTemp"/>
+
+                    <TextView
+                        android:id="@+id/tvOfficeTemp"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="+0"
+                        android:textSize="35sp"
+                        android:textColor="#f1f1f1"
+                        app:layout_constraintTop_toBottomOf="@id/tvOfficeT"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toStartOf="@id/ivOfficeTewmp"/>
+
+                    <ImageView
+                        android:id="@+id/ivOfficeTewmp"
+                        android:layout_width="26dp"
+                        android:layout_height="42dp"
+                        android:src="@drawable/ic_hot_temp"
+                        android:layout_marginEnd="15dp"
+                        app:layout_constraintTop_toBottomOf="@id/tvOfficeT"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintBottom_toBottomOf="parent"/>
+                </androidx.constraintlayout.widget.ConstraintLayout>
+
+            </com.google.android.material.card.MaterialCardView>
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="1024dp"
+            android:layout_height="600dp">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view8"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="110dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight8"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName8"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond8"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond8"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight8"
+                    app:layout_constraintTop_toTopOf="@id/ivLight8"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight8"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp8"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName8"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond8"/>
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view6"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="210dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+
+                <ImageView
+                    android:id="@+id/ivLight6"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName6"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond6"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond6"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight6"
+                    app:layout_constraintTop_toTopOf="@id/ivLight6"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight6"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp6"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName6"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond6"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view23"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="310dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivAircond23"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName23"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond23"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp23"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName23"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond23"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view10"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="420dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight10"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName10"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond10"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond10"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight10"
+                    app:layout_constraintTop_toTopOf="@id/ivLight10"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight10"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp10"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName10"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond10"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view11"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="520dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight11"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName11"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond11"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond11"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight11"
+                    app:layout_constraintTop_toTopOf="@id/ivLight11"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight11"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp11"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textColor="#ffa370"
+                    android:textSize="10sp"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName11"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond11" />
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view12"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="620dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight12"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName12"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond12"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond12"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight12"
+                    app:layout_constraintTop_toTopOf="@id/ivLight12"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight12"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp12"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName12"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond12"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view1"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="720dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight1"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName1"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond1"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond1"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight1"
+                    app:layout_constraintTop_toTopOf="@id/ivLight1"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight1"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp1"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName1"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond1"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view21"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="155dp"
+                android:layout_marginStart="820dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight21"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_on"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName21"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight21"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp21"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName21"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view18"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="280dp"
+                android:layout_marginStart="90dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight18"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName18"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond18"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond18"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight18"
+                    app:layout_constraintTop_toTopOf="@id/ivLight18"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight18"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp18"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName18"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond18"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view19"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="200dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight19"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName19"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond19"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond19"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight19"
+                    app:layout_constraintTop_toTopOf="@id/ivLight19"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight19"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp19"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName19"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond19"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view20"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="305dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight20"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_on"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName20"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond20"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond20"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight20"
+                    app:layout_constraintTop_toTopOf="@id/ivLight20"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight20"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp20"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName20"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond20"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view13"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="408dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight13"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName13"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond13"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond13"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight13"
+                    app:layout_constraintTop_toTopOf="@id/ivLight13"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight13"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp13"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName13"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond13"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view22"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="513dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivAircond22"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName22" />
+
+                <TextView
+                    android:id="@+id/tvRoomName22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond22"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp22"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName22"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond22"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view14"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="618dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight14"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName14"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond14"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond14"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight14"
+                    app:layout_constraintTop_toTopOf="@id/ivLight14"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight14"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp14"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName14"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond14"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view2"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="725dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight2"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName2"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond2"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond2"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight2"
+                    app:layout_constraintTop_toTopOf="@id/ivLight2"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight2"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName2"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond2"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view7"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="245dp"
+                android:layout_marginStart="830dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight7"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName7"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond7"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond7"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight7"
+                    app:layout_constraintTop_toTopOf="@id/ivLight7"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight7"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp7"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName7"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond7"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view5"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginStart="190dp"
+                android:layout_marginTop="345dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight5"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName5"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond5"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond5"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight5"
+                    app:layout_constraintTop_toTopOf="@id/ivLight5"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight5"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp5"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName5"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond5"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view4"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="300dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight4"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName4"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond4"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond4"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight4"
+                    app:layout_constraintTop_toTopOf="@id/ivLight4"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight4"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName4"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond4"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view15"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="410dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight15"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName15"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond15"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond15"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight15"
+                    app:layout_constraintTop_toTopOf="@id/ivLight15"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight15"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp15"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName15"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond15"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view16"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="519dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight16"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName16"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond16"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond16"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight16"
+                    app:layout_constraintTop_toTopOf="@id/ivLight16"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight16"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp16"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName16"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond16"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view17"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="625dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight17"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName17"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond17"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond17"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight17"
+                    app:layout_constraintTop_toTopOf="@id/ivLight17"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight17"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp17"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName17"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond17"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view3"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="745dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight3"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName3"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond3"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond3"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight3"
+                    app:layout_constraintTop_toTopOf="@id/ivLight3"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight3"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName3"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond3"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/view9"
+                android:layout_width="96dp"
+                android:layout_height="69dp"
+                android:layout_marginTop="345dp"
+                android:layout_marginStart="850dp"
+                android:background="@drawable/item_background"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <ImageView
+                    android:id="@+id/ivLight9"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_light_off"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintBottom_toTopOf="@id/tvRoomName9"
+                    app:layout_constraintEnd_toStartOf="@id/ivAircond9"/>
+
+                <ImageView
+                    android:id="@+id/ivAircond9"
+                    android:layout_width="34dp"
+                    android:layout_height="34dp"
+                    android:src="@drawable/ic_aircond_off"
+                    app:layout_constraintStart_toEndOf="@id/ivLight9"
+                    app:layout_constraintTop_toTopOf="@id/ivLight9"
+                    app:layout_constraintEnd_toEndOf="parent"/>
+
+                <TextView
+                    android:id="@+id/tvRoomName9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Раҳбарият (14)"
+                    android:textSize="10sp"
+                    android:textColor="@color/white"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@id/ivLight9"/>
+
+                <TextView
+                    android:id="@+id/tvRoomTemp9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="+30"
+                    android:textSize="10sp"
+                    android:textColor="#ffa370"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintStart_toEndOf="@id/tvRoomName9"
+                    app:layout_constraintTop_toBottomOf="@id/ivAircond9"/>
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </FrameLayout>
+
+</FrameLayout>
