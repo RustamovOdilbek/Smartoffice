@@ -20,8 +20,8 @@ import javax.inject.Singleton
 class NetworkModule {
 
     private val IS_TESTER = false
-    private val BASE_URL: String = "http://10.69.69.188/"
-    private val BASE_URL_DEVELOPMENT: String = "http://10.69.69.188/"
+    private val BASE_URL: String = ""
+    private val BASE_URL_DEVELOPMENT: String = ""
 
     var gson: Gson = GsonBuilder()
         .setLenient()
